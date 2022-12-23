@@ -191,9 +191,9 @@ def index_to_label(index):
 
 
 def full_window():
-    x_valid = np.load('x_validFULL.npy')
-    q_valid = np.load('q_validFULL.npy')
-    y_valid = np.load('y_validFULL.npy')
+    x_valid = np.load('equal_x_valid.npy')
+    q_valid = np.load('equal_q_valid.npy')
+    y_valid = np.load('equal_y_valid.npy')
 
     return x_valid,q_valid,y_valid
 

@@ -18,9 +18,9 @@ set_seed(seed)
 labels = ['backward', 'bed', 'bird', 'cat', 'dog', 'down', 'eight', 'five', 'follow', 'forward', 'four', 'go', 'happy', 'house', 'learn', 'left', 'marvin', 'nine', 'no', 'off', 'on', 'one', 'right', 'seven', 'sheila', 'six', 'stop', 'three', 'tree', 'two', 'up', 'visual', 'wow', 'yes', 'zero']
 
 def full_window():
-    x_valid = np.load('/datasets/x_validFULL.npy')
-    q_valid = np.load('/datasets/q_validFULL.npy')
-    y_valid = np.load('/datasets/y_validFULL.npy')
+    x_valid = np.load('/datasets/equal_x_valid.npy')
+    q_valid = np.load('/datasets/equal_q_valid.npy')
+    y_valid = np.load('/datasets/equal_y_valid.npy')
 
     return x_valid,q_valid,y_valid
 
