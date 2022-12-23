@@ -3,45 +3,45 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 #Load saved training histories
-classic_histFULL = np.load('/datasets/classic_histFULL.npy',allow_pickle='TRUE').item()
-qcnn_histFULL_ALTKERN = np.load('/datasets/qcnn_histFULL_ALTKERN.npy',allow_pickle='TRUE').item()
-cconv_histFULL = np.load('cconv_histFULL.npy',allow_pickle='TRUE').item()
-qcnn_histFULL = np.load('/datasets/qcnn_histFULL.npy',allow_pickle='TRUE').item()
-classic_hist = np.load('/datasets/classic_hist.npy',allow_pickle='TRUE').item()
-qcnn_hist = np.load('/datasets/qcnn_hist.npy',allow_pickle='TRUE').item()
-cconv_hist = np.load('cconv_hist.npy',allow_pickle='TRUE').item()
-classic_histTENCLASS = np.load('/datasets/classic_histTENCLASS.npy',allow_pickle='TRUE').item()
-qcnn_histTENCLASS = np.load('/datasets/qcnn_histTENCLASS.npy',allow_pickle='TRUE').item()
+classic_histFULL = np.load('training_histories/classic_histFULL.npy',allow_pickle='TRUE').item()
+qcnn_histFULL_ALTKERN = np.load('training_histories/qcnn_histFULL_ALTKERN.npy',allow_pickle='TRUE').item()
+cconv_histFULL = np.load('training_histories/cconv_histFULL.npy',allow_pickle='TRUE').item()
+qcnn_histFULL = np.load('training_histories/qcnn_histFULL.npy',allow_pickle='TRUE').item()
+classic_hist = np.load('training_histories/classic_hist.npy',allow_pickle='TRUE').item()
+qcnn_hist = np.load('training_histories/qcnn_hist.npy',allow_pickle='TRUE').item()
+cconv_hist = np.load('training_histories/cconv_hist.npy',allow_pickle='TRUE').item()
+classic_histTENCLASS = np.load('training_histories/classic_histTENCLASS.npy',allow_pickle='TRUE').item()
+qcnn_histTENCLASS = np.load('training_histories/qcnn_histTENCLASS.npy',allow_pickle='TRUE').item()
 
 classic_histDATA_REDUCE_FULL = []
-classic_histDATA_REDUCE_FULL.append(np.load('/datasets/classic_hist_134_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histDATA_REDUCE_FULL.append(np.load('/datasets/classic_hist_106_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histDATA_REDUCE_FULL.append(np.load('/datasets/classic_hist_78_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histDATA_REDUCE_FULL.append(np.load('/datasets/classic_hist_50_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histDATA_REDUCE_FULL.append(np.load('/datasets/classic_hist_22_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histDATA_REDUCE_FULL.append(np.load('training_histories/classic_hist_134_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histDATA_REDUCE_FULL.append(np.load('training_histories/classic_hist_106_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histDATA_REDUCE_FULL.append(np.load('training_histories/classic_hist_78_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histDATA_REDUCE_FULL.append(np.load('training_histories/classic_hist_50_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histDATA_REDUCE_FULL.append(np.load('training_histories/classic_hist_22_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
 
 qcnn_histDATA_REDUCE_FULL = []
-qcnn_histDATA_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_134_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histDATA_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_106_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histDATA_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_78_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histDATA_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_50_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histDATA_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_22_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histDATA_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_134_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histDATA_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_106_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histDATA_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_78_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histDATA_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_50_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histDATA_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_22_DATA_REDUCE_FULL.npy',allow_pickle='TRUE').item())
 
 data_pointsDATA_REDUCE_FULL = [134,106,78,50,22]
 
 classic_histPARAM_REDUCE_FULL = []
-classic_histPARAM_REDUCE_FULL.append(np.load('/datasets/classic_hist_44544_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histPARAM_REDUCE_FULL.append(np.load('/datasets/classic_hist_13796_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histPARAM_REDUCE_FULL.append(np.load('/datasets/classic_hist_4614_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histPARAM_REDUCE_FULL.append(np.load('/datasets/classic_hist_2350_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-classic_histPARAM_REDUCE_FULL.append(np.load('/datasets/classic_hist_1571_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histPARAM_REDUCE_FULL.append(np.load('training_histories/classic_hist_44544_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histPARAM_REDUCE_FULL.append(np.load('training_histories/classic_hist_13796_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histPARAM_REDUCE_FULL.append(np.load('training_histories/classic_hist_4614_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histPARAM_REDUCE_FULL.append(np.load('training_histories/classic_hist_2350_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+classic_histPARAM_REDUCE_FULL.append(np.load('training_histories/classic_hist_1571_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
 
 qcnn_histPARAM_REDUCE_FULL = []
-qcnn_histPARAM_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_49950_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histPARAM_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_14822_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histPARAM_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_4890_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histPARAM_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_2435_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
-qcnn_histPARAM_REDUCE_FULL.append(np.load('/datasets/qcnn_hist_1832_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histPARAM_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_49950_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histPARAM_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_14822_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histPARAM_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_4890_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histPARAM_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_2435_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
+qcnn_histPARAM_REDUCE_FULL.append(np.load('training_histories/qcnn_hist_1832_PARAM_REDUCE_FULL.npy',allow_pickle='TRUE').item())
 
 classic_data_pointsPARAM_REDUCE_FULL = [44544, 13796, 4614, 2350, 1571]
 qcnn_data_pointsPARAM_REDUCE_FULL = [49950, 14822, 4890, 2435, 1832]
@@ -228,25 +228,6 @@ def plot_times():
         plt.text(x=index, y =-200, s=f"{data}", fontdict=dict(fontsize=14))
     plt.show()
 
-def plot_label_reduce():
-    plt.style.use("seaborn-whitegrid")
-    num_of_classes = [35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2]
-    classic_model_acc = [0.90820,0.90903,0.88517,0.89229,0.90858,0.90387,0.89903,0.86289,0.90205,0.89846,0.88912,0.87843,0.89542,0.88884,0.87046,0.89284,0.89966,0.85872,0.87845,0.87713,0.86741,0.90366,0.91084,0.88496,0.86332,0.91902,0.88912,0.92006,0.88573,0.88318,0.92625,0.94235,0.90934,0.97305]
-    qcnn_model_acc = [0.88980,0.88910,0.89844,0.88279,0.85965,0.86778,0.89036,0.88621,0.89457,0.89883,0.89055,0.88228,0.89640,0.89660,0.91860,0.89882,0.89194,0.85286,0.87923,0.87226,0.89020,0.90687,0.89406,0.89604,0.90218,0.87485,0.90367,0.90686,0.88824,0.89566,0.88663,0.93617,0.91840,0.95283]
-    dropped_labels = ['visual','happy','house','marvin','backward','follow','right','sheila','seven','six','tree','five','forward','three','zero','eight','two','four','cat','yes','wow','nine','dog','learn','one','down','bed','left','stop','bird','go','no','up']
-    fig, ax = plt.subplots(1, 1, figsize=(8, 9))
-
-    ax.plot(num_of_classes,classic_model_acc, 'o', linestyle=linestyle_arr[0], linewidth=line, color=color[0], label='Classic')
-    ax.plot(num_of_classes,qcnn_model_acc, 'x', linestyle=linestyle_arr[1], linewidth=line, color=color[1], label='QCNN')
-    ax.set_ylabel("Accuracy")
-    ax.set_ylim([0, 1])
-    ax.set_xticks(num_of_classes)
-    ax.set_xlabel("Number of commands")
-    ax.legend()
-    plt.title('Evolution of validation accuracies as the number of commands decreases',size='x-large')
-    plt.show()
-    print_stats_arr(classic_model_acc,qcnn_model_acc)
-
 
 def plot_label_reduce_v2():
     plt.style.use("seaborn-whitegrid")
@@ -292,7 +273,5 @@ def plot_label_reduce_v2():
 #print_stats_arr_pr(classic_data_pointsPARAM_REDUCE_FULL,qcnn_data_pointsPARAM_REDUCE_FULL,classic_histPARAM_REDUCE_FULL,qcnn_histPARAM_REDUCE_FULL)
 
 #plot_times()
-
-#plot_label_reduce()
 
 plot_label_reduce_v2()

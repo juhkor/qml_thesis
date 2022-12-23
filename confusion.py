@@ -18,9 +18,9 @@ set_seed(seed)
 labels = ['backward', 'bed', 'bird', 'cat', 'dog', 'down', 'eight', 'five', 'follow', 'forward', 'four', 'go', 'happy', 'house', 'learn', 'left', 'marvin', 'nine', 'no', 'off', 'on', 'one', 'right', 'seven', 'sheila', 'six', 'stop', 'three', 'tree', 'two', 'up', 'visual', 'wow', 'yes', 'zero']
 
 def full_window():
-    x_valid = np.load('/datasets/equal_x_valid.npy')
-    q_valid = np.load('/datasets/equal_q_valid.npy')
-    y_valid = np.load('/datasets/equal_y_valid.npy')
+    x_valid = np.load('datasets/x_validFULL.npy')
+    q_valid = np.load('datasets/q_validFULL.npy')
+    y_valid = np.load('datasets/y_validFULL.npy')
 
     return x_valid,q_valid,y_valid
 
@@ -93,17 +93,17 @@ def index_to_label(index):
 def main():
     x_valid,q_valid,y_valid = full_window()
 
-    classic_model = load_model('best_classic.hdf5')
+    classic_model = load_model('some_models/best_classic.hdf5')
     classic_predict = get_predictions(classic_model,x_valid)
     classic_conf_matrix = conf(y_valid,classic_predict)
     df_classic = get_df(classic_conf_matrix,labels)
-    plot_heatmap(df_classic)
+    plot_heatmap(df_classic,35,'c')
 
-    qcnn_model = load_model('best_qcnn.hdf5')
+    qcnn_model = load_model('some_models/best_qcnn.hdf5')
     qcnn_predict = get_predictions(qcnn_model,q_valid)
     qcnn_conf_matrix = conf(y_valid,qcnn_predict)
     df_qcnn = get_df(qcnn_conf_matrix,labels)
-    plot_heatmap(df_qcnn)
+    plot_heatmap(df_qcnn,35,'q')
 
     diagonal = np.diag(classic_conf_matrix)
     column_sums = np.sum(classic_conf_matrix, axis=0)
@@ -118,3 +118,5 @@ def main():
     x_valid, q_valid, y_valid = reduce_labels(x_valid, q_valid, y_valid, to_drop)
     print(y_valid.shape)
     print(x_valid.shape)
+
+main()
